@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        
+        function transformArr( arr, callback ) {
+            const newArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                const item = arr[i];
+                newArr.push( callback(item, i) );
+            }
+            return newArr;
+        }
+        
+        function addIndexUppercase( item, index ) {
+            return `${index + 1} ${item.toUpperCase()}`;
+        }
+
+        const monthsUpCs = transformArr( months, addIndexUppercase ); 
+        
+        const monthsLwCs = transformArr( months, item => item.toLowerCase() ); 
+
+        console.log( monthsUpCs );
+        console.log( monthsLwCs );
+
+        // const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+        months.forEach( (item, index ) => console.log(`${index + 1} ${item.toUpperCase()}`) );
+
+    </script>
+</body>
+</html>

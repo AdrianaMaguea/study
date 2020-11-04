@@ -7,18 +7,28 @@
 </head>
 <body>
     <script>
-        var data = {};
-        var req = new XMLHttpRequest();
+        
+       
 
-        req.open("GET", "data.json");
+        (function(){
+            
+            function ajaxGet (dataSource, callback) {
+                var req = new XMLHttpRequest();
 
-        req.send();
+                req.open("GET", dataSource);
 
-        req.onreadystatechange = function (evt) {
-            if (req.readyState == 4 && req.status == 200 ) {
-                data = JSON.parse(req.responseText);
+                req.send();
+
+                req.onreadystatechange = function (evt) {
+                    if (req.readyState == 4 && req.status == 200 ) {
+                        callback(JSON.parse(req.responseText));
+                    }
+                }
             }
-        }
+
+            ajaxGet("data.json", dato => console.log(dato));
+
+        })();
 
     </script>
 </body>
