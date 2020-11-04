@@ -1,0 +1,34 @@
+{
+   "personas":[
+      {
+         "name":"Carlos",
+         "age":40,
+         "gender":"M"
+      },
+      {
+         "name":"Adriana",
+         "age":21,
+         "gender":"F"
+      },
+      {
+         "name":"Niña",
+         "age":8,
+         "gender":"F"
+      },
+      {
+         "name":"Ana",
+         "age":8,
+         "gender":"F"
+      },
+      {
+         "name":"Eriberto",
+         "age":12,
+         "gender":"M"
+      },
+      {
+         "name":"Framuncio",
+         "age":18,
+         "gender":"M"
+      }
+   ]
+}
