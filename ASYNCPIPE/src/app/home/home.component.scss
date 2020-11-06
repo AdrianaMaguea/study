@@ -1,0 +1,44 @@
+::ng-deep body {
+  background-color:#FDE7BE;
+}
+.newspaperStack {
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  position: fixed;
+  bottom: 194px;
+  left:653px;
+  width: 100px;
+  padding: 0;
+  margin: 0;
+  li {
+    height: 10px;
+  }
+  img {
+    transform: matrix(0.26, -0.1, 0.2, 0.15, -30, -300);
+  }
+}
+
+video {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.buy, .read, .subscribe, .unsubscribe {
+  border-radius: 5px;
+  background-color: #E80F52;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 5px 20px ;
+  margin: 10px 5px;
+}

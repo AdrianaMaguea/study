@@ -1,0 +1,18 @@
+<div class="buttonContainer">
+  <button class="buy" (click)="buyNewspaper()">Buy</button>
+  <button class="read" (click)="readNewspaper()">Read</button>
+
+  <button class="subscribe" *ngIf="!subscriptionMode else unsubscribe" (click)="subscribeToNewspaper()">Subscribe</button>
+
+  <ng-template #unsubscribe>
+    <button class="unsubscribe" (click)="unSubscribeToNewspaper()">Unsubscribe</button>
+  </ng-template>
+</div>
+
+<ul class="newspaperStack">
+  <li *ngFor="let newspaper of newspaperStack">
+    <img src="../../assets/newspaper.png" alt="">
+  </li>
+</ul>
+
+<video src="../../assets/home.mp4" autoplay loop></video>

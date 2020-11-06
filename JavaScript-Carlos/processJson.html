@@ -6,11 +6,26 @@
     <title>Process</title>
 </head>
 <body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Genero</th>
+                <th>Emoji</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+            
+        </tbody>
+    </table>
+
+
     <script>
-        
-       
 
         (function(){
+            
             
             function ajaxGet (dataSource, callback) {
                 var req = new XMLHttpRequest();
@@ -26,9 +41,58 @@
                 }
             }
 
-            ajaxGet("data.json", dato => console.log(dato));
+            ajaxGet("data.json", dato => { 
+                const personas = dato.personas.map(item => {
+                    item.emoji = "⚽"
+                    if (item.age >= 18 && item.gender == "M") {
+                        item.emoji = "👔"
+                    }
+                    if (item.age >= 18 && item.gender == "F"){
+                        item.emoji = "👠"
+                    }
+                    return item;
+                }) 
+                console.log(personas);
+                fillTable(personas);
+                
+            } );
+
+            function fillTable (data){
+                data.forEach(element => {
+                    var tr = document.createElement("tr");
+                        // td1 = document.createElement("td"),
+                        // name = document.createTextNode(element.name),
+                        // td2 = document.createElement("td"),
+                        // age = document.createTextNode(element.age),
+                        // td3 = document.createElement("td"),
+                        // gender = document.createTextNode(element.gender),
+                        // td4 = document.createElement("td"),
+                        // emoji = document.createTextNode(element.emoji);
+
+                   for( const propiedad in element ) {
+                        var td = document.createElement('td');
+                        td.appendChild(document.createTextNode(element[propiedad]));
+                        tr.appendChild(td);
+                    };
+
+                    // td1.appendChild(name);
+                    // td2.appendChild(age);
+                    // td3.appendChild(gender);
+                    // td4.appendChild(emoji);
+                    // tr.appendChild(td1);
+                    // tr.appendChild(td2);
+                    // tr.appendChild(td3);
+                    // tr.appendChild(td4);
+
+                    var padre = document.getElementById("body");
+                    padre.appendChild(tr);
+                    
+                });
+            }
 
         })();
+
+
 
     </script>
 </body>

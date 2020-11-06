@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="lista">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Asperiores ad, quam unde. Fug.</li>
+    </ol>
+    <script>
+        var elemento = document.createElement("li"),
+            contenido = document.createTextNode("Nuevo Texto")
+
+            elemento.appendChild(contenido);
+            
+            // var padre = document.getElementsByTagName("li")[0].parentNode; (se utiliza cuando se quiere conocer al padre) no es lo correcto cuando se trabaja con muchas listas
+
+            var padre = document.getElementById("lista");
+            padre.appendChild(elemento); 
+   
+     </script>
+</body>
+</html>

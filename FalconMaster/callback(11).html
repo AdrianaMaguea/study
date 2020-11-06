@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var numeroA = 2;
+        // var numeroB = 6;
+
+        // function sumar(a,b) {
+        //     return a + b;
+        // }
+        
+        // function multiplicar (a, b) {
+        //     return a * b;
+        // }
+
+        // function decirEdad(nombre, edad) {
+        //     return nombre + ' tiene ' + edad + 'años';
+        // }
+
+        // function sumaCallback (a) {
+        //     return a(numeroA, numeroB);
+        // }
+
+        // // console.log(sumaCallback(sumar));
+        // // console.log(sumaCallback(multiplicar));
+
+        // // console.log( decirEdad('Carlos', 40) );
+
+        // console.log ( sumaCallback(decirEdad) );
+
+        // function dividir ( a, b) {
+        //     return a / b;
+        // }
+
+        // function callBack (funcion, a, b) {
+        //     return funcion(a, b);
+        // }
+
+        // console.log(callBack(dividir, numeroA, numeroB));
+
+        var datosAdriana = ['Adriana', '20 años', 'soltera'];
+
+        // function informacion(nombre, edad, civil) {
+        //     return nombre + ' tiene ' + edad + ' y esta ' + civil;
+        // }
+
+        function infoFinal(funcion, a, b, c) {
+            return funcion(a, b, c);
+        }
+
+        // console.log(infoFinal(informacion, datosAdriana[0], datosAdriana[1], datosAdriana[2]));
+        
+        console.log(infoFinal((nombre, edad, civil) => nombre + ' tiene ' + edad + ' y esta ' + civil, datosAdriana[0], datosAdriana[1], datosAdriana[2]));
+
+
+
+
+    </script>
+</body>
+</html>
